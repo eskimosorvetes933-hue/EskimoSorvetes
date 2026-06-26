@@ -3,20 +3,16 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
-    <!-- FORÇA MODO CLARO -->
     <meta name="color-scheme" content="light" />
     <title>Eskimó Sorvetes - Carrinho</title>
 
-    <!-- Fontes e ícones -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
     <style>
-        /* ============================================================
-               FORÇA MODO CLARO
-               ============================================================ */
+        /* ===== FORÇA MODO CLARO ===== */
         * {
             color-scheme: light !important;
         }
@@ -138,6 +134,51 @@
         .btn-remover:hover {
             background: #b0b0b0;
             transform: none;
+        }
+
+        /* ===== CONTROLE DE QUANTIDADE ===== */
+        .qty-control {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        .qty-control .btn-qty {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            color: #fff;
+        }
+        .qty-control .btn-qty-plus {
+            background: #2ecc71;
+        }
+        .qty-control .btn-qty-plus:hover {
+            background: #27ae60;
+            transform: scale(1.05);
+        }
+        .qty-control .btn-qty-minus {
+            background: #e74c3c;
+        }
+        .qty-control .btn-qty-minus:hover {
+            background: #c0392b;
+            transform: scale(1.05);
+        }
+        .qty-control .qty-display {
+            font-weight: 800;
+            font-size: 1.1rem;
+            min-width: 24px;
+            text-align: center;
+            color: var(--preto);
         }
 
         /* ===== BOTÃO FLUTUANTE WHATSAPP ===== */
@@ -372,22 +413,6 @@
             border-radius: 50px;
             font-size: 1rem;
         }
-        .card-produto .btn-adicionar {
-            margin-top: 14px;
-            padding: 8px 18px;
-            font-size: 0.85rem;
-            background: var(--azul-claro);
-            color: #fff;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: var(--transition);
-            font-weight: 700;
-        }
-        .card-produto .btn-adicionar:hover {
-            background: #2a8ab5;
-            transform: scale(1.05);
-        }
 
         .card-produto.acai {
             border-bottom-color: var(--roxo);
@@ -460,7 +485,7 @@
         .carrinho-sidebar h2 {
             font-family: 'Fredoka One', cursive;
             color: var(--vermelho-principal);
-            margin-bottom: 20px;
+            margin-bottom: 8px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -477,11 +502,59 @@
             color: var(--vermelho-principal);
         }
 
+        /* ===== AVISO DE ENTREGA ===== */
+        .prazo-entrega {
+            background: #fef9e7;
+            border-left: 4px solid var(--laranja);
+            padding: 10px 14px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            color: var(--preto);
+            font-size: 0.95rem;
+        }
+        .prazo-entrega i {
+            color: var(--laranja);
+            font-size: 1.4rem;
+        }
+
+        /* ===== CAMPO ENDEREÇO ===== */
+        .campo-endereco {
+            margin: 10px 0 14px 0;
+        }
+        .campo-endereco label {
+            font-weight: 700;
+            display: block;
+            margin-bottom: 4px;
+            font-size: 0.95rem;
+            color: var(--preto);
+        }
+        .campo-endereco input {
+            width: 100%;
+            padding: 10px 14px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-family: 'Nunito', sans-serif;
+            transition: var(--transition);
+            background: #fafafa;
+            color: var(--preto);
+        }
+        .campo-endereco input:focus {
+            outline: none;
+            border-color: var(--vermelho-principal);
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(215, 25, 32, 0.1);
+        }
+
         .carrinho-items {
             flex: 1;
             list-style: none;
             padding: 0;
-            margin: 0 0 20px 0;
+            margin: 0 0 12px 0;
         }
         .carrinho-items li {
             display: flex;
@@ -685,6 +758,7 @@
             gap: 16px;
             transition: var(--transition);
             border-left: 6px solid var(--amarelo-destaque);
+            flex-wrap: wrap;
         }
         .item-produto:hover {
             transform: scale(1.02);
@@ -694,6 +768,7 @@
         }
         .item-produto .detalhes {
             flex: 1;
+            min-width: 120px;
         }
         .item-produto .detalhes h4 {
             font-size: 1.1rem;
@@ -704,6 +779,19 @@
             color: var(--vermelho-principal);
             font-size: 1.1rem;
             margin-top: 2px;
+        }
+        .item-produto .qty-control {
+            margin-top: 0;
+            gap: 6px;
+        }
+        .item-produto .qty-control .btn-qty {
+            width: 26px;
+            height: 26px;
+            font-size: 1rem;
+        }
+        .item-produto .qty-control .qty-display {
+            min-width: 18px;
+            font-size: 1rem;
         }
 
         /* ===== CONTATO ===== */
@@ -830,10 +918,7 @@
             transform: translateY(-4px);
         }
 
-        /* ============================================================= */
         /* ===== RESPONSIVIDADE ===== */
-        /* ============================================================= */
-
         @media (max-width: 992px) {
             .hero .container {
                 grid-template-columns: 1fr;
@@ -979,6 +1064,7 @@
             }
             .item-produto {
                 padding: 16px 18px;
+                flex-wrap: nowrap;
             }
 
             .contato-grid {
@@ -1172,7 +1258,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1>O sabor que <span>derrete</span> o coração</h1>
-                <p>Há mais de 30 anos criando os sorvetes mais cremosos e deliciosos. Adicione ao carrinho e peça pelo WhatsApp!</p>
+                <p>Há mais de 30 anos criando os sorvetes mais cremosos e deliciosos. Use os botões <strong>+</strong> e <strong>−</strong> para montar seu pedido!</p>
                 <div class="hero-buttons">
                     <a href="#produtos" class="btn">Ver Produtos</a>
                     <button class="btn btn-carrinho" id="abrirCarrinhoHero">
@@ -1190,14 +1276,14 @@
     <section class="section" id="produtos">
         <div class="container">
             <h2 class="section-title">Nossos <span>Produtos</span></h2>
-            <p class="section-subtitle">Clique em "Adicionar" para montar seu pedido.</p>
+            <p class="section-subtitle">Clique em <strong>+</strong> ou <strong>−</strong> para ajustar a quantidade.</p>
             <div class="grid-produtos" id="produtosGrid">
-                <!-- Os produtos serão injetados via JS -->
+                <!-- Injetado via JS -->
             </div>
         </div>
     </section>
 
-    <!-- ===== DESTAQUES (CARROSSEL) ===== -->
+    <!-- ===== DESTAQUES ===== -->
     <section class="section" id="destaques" style="background: #fef2f2;">
         <div class="container">
             <h2 class="section-title">Destaques <span>da Semana</span></h2>
@@ -1267,7 +1353,7 @@
     <section class="section" id="lista" style="background: #fff8f0;">
         <div class="container">
             <h2 class="section-title">Nosso <span>Cardápio</span></h2>
-            <p class="section-subtitle">Veja todos os produtos com preços e peça pelo WhatsApp.</p>
+            <p class="section-subtitle">Veja todos os produtos com preços.</p>
             <div class="lista-produtos" id="listaProdutos">
                 <!-- Injetado via JS -->
             </div>
@@ -1338,12 +1424,26 @@
                 <span><i class="fas fa-shopping-cart"></i> Carrinho</span>
                 <button id="fecharCarrinho">&times;</button>
             </h2>
+
+            <div class="prazo-entrega">
+                <i class="fas fa-clock"></i>
+                <span>⏱️ Entrega em até <strong>40 minutos</strong>!</span>
+            </div>
+
             <ul class="carrinho-items" id="carrinhoItems">
                 <!-- Itens dinâmicos -->
             </ul>
+
+            <!-- ===== CAMPO ENDEREÇO ===== -->
+            <div class="campo-endereco">
+                <label for="enderecoEntrega">📍 Endereço de entrega</label>
+                <input type="text" id="enderecoEntrega" placeholder="Rua, número, bairro, complemento..." />
+            </div>
+
             <div class="carrinho-total">
                 Total: <span id="carrinhoTotal">R$ 0,00</span>
             </div>
+
             <div class="carrinho-actions">
                 <button class="btn btn-whatsapp" id="enviarWhatsapp">
                     <i class="fab fa-whatsapp"></i> Enviar Pedido
@@ -1358,66 +1458,18 @@
     <!-- ===== JAVASCRIPT ===== -->
     <script>
         // ===== DADOS DOS PRODUTOS =====
-        const produtos = [{
-            id: 1,
-            nome: 'Açaí 180 g',
-            preco: 13.00,
-            icone: '🍇',
-            categoria: 'acai',
-            descricao: 'Puro e energético'
-        }, {
-            id: 2,
-            nome: 'Açaí com leite em pó',
-            preco: 14.00,
-            icone: '🥛',
-            categoria: 'acai',
-            descricao: 'Cremoso e saboroso'
-        }, {
-            id: 3,
-            nome: 'Açaí 900 g',
-            preco: 29.00,
-            icone: '🍇',
-            categoria: 'acai',
-            descricao: 'Família ou para compartilhar'
-        }, {
-            id: 4,
-            nome: 'Best Cup',
-            preco: 19.50,
-            icone: '🥤',
-            categoria: 'gelado',
-            descricao: 'Delícia em copo'
-        }, {
-            id: 5,
-            nome: 'Zero açúcar 1L',
-            preco: 22.50,
-            icone: '🍦',
-            categoria: 'gelado',
-            descricao: 'Saúde e sabor'
-        }, {
-            id: 6,
-            nome: 'Grand Nevado',
-            preco: 23.50,
-            icone: '❄️',
-            categoria: 'gelado',
-            descricao: 'Extra cremoso'
-        }, {
-            id: 7,
-            nome: 'Pote 2L - vários sabores',
-            preco: 28.00,
-            icone: '🍫',
-            categoria: 'chocolate',
-            descricao: 'Escolha o seu'
-        }, {
-            id: 8,
-            nome: 'Pote 2L - Super Promoção',
-            preco: 10.00,
-            icone: '🔥',
-            categoria: 'promocao',
-            descricao: 'Ofertão imperdível!',
-            etiqueta: 'Promoção'
-        }];
+        const produtos = [
+            { id: 1, nome: 'Açaí 180 g', preco: 13.00, icone: '🍇', categoria: 'acai', descricao: 'Puro e energético' },
+            { id: 2, nome: 'Açaí com leite em pó', preco: 14.00, icone: '🥛', categoria: 'acai', descricao: 'Cremoso e saboroso' },
+            { id: 3, nome: 'Açaí 900 g', preco: 29.00, icone: '🍇', categoria: 'acai', descricao: 'Família ou para compartilhar' },
+            { id: 4, nome: 'Best Cup', preco: 19.50, icone: '🥤', categoria: 'gelado', descricao: 'Delícia em copo' },
+            { id: 5, nome: 'Zero açúcar 1L', preco: 22.50, icone: '🍦', categoria: 'gelado', descricao: 'Saúde e sabor' },
+            { id: 6, nome: 'Grand Nevado', preco: 23.50, icone: '❄️', categoria: 'gelado', descricao: 'Extra cremoso' },
+            { id: 7, nome: 'Pote 2L - vários sabores', preco: 28.00, icone: '🍫', categoria: 'chocolate', descricao: 'Escolha o seu' },
+            { id: 8, nome: 'Pote 2L - Super Promoção', preco: 10.00, icone: '🔥', categoria: 'promocao', descricao: 'Ofertão imperdível!',
+                etiqueta: 'Promoção' }
+        ];
 
-        // ===== CARRINHO =====
         let carrinho = [];
 
         // ===== REFERÊNCIAS DOM =====
@@ -1431,10 +1483,11 @@
         const fecharCarrinhoBtn = document.getElementById('fecharCarrinho');
         const limparCarrinhoBtn = document.getElementById('limparCarrinho');
         const enviarWhatsappBtn = document.getElementById('enviarWhatsapp');
+        const enderecoInput = document.getElementById('enderecoEntrega');
 
         // ===== RENDERIZAR PRODUTOS =====
         function renderizarProdutos() {
-            // Grid de produtos
+            // Grid de produtos (cards)
             produtosGrid.innerHTML = produtos.map(p => `
                         <div class="card-produto ${p.categoria}">
                             ${p.etiqueta ? `<span class="etiqueta">${p.etiqueta}</span>` : ''}
@@ -1442,7 +1495,11 @@
                             <h3>${p.nome}</h3>
                             <p>${p.descricao}</p>
                             <span class="preco">R$ ${p.preco.toFixed(2)}</span>
-                            <button class="btn-adicionar" data-id="${p.id}">Adicionar</button>
+                            <div class="qty-control">
+                                <button class="btn-qty btn-qty-minus" data-id="${p.id}">−</button>
+                                <span class="qty-display" data-id="${p.id}">0</span>
+                                <button class="btn-qty btn-qty-plus" data-id="${p.id}">+</button>
+                            </div>
                         </div>
                     `).join('');
 
@@ -1454,15 +1511,27 @@
                                 <h4>${p.nome}</h4>
                                 <span class="valor">R$ ${p.preco.toFixed(2)}</span>
                             </div>
-                            <button class="btn-adicionar" data-id="${p.id}" style="background: var(--azul-claro); color: #fff; border: none; border-radius: 30px; padding: 6px 16px; cursor: pointer; font-weight: 700;">+</button>
+                            <div class="qty-control">
+                                <button class="btn-qty btn-qty-minus" data-id="${p.id}">−</button>
+                                <span class="qty-display" data-id="${p.id}">0</span>
+                                <button class="btn-qty btn-qty-plus" data-id="${p.id}">+</button>
+                            </div>
                         </div>
                     `).join('');
 
-            // Adicionar eventos de "Adicionar" em ambos os lugares
-            document.querySelectorAll('.btn-adicionar').forEach(btn => {
+            // Adicionar eventos para os botões + e -
+            document.querySelectorAll('.btn-qty-plus').forEach(btn => {
                 btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
                     const id = parseInt(this.dataset.id);
                     adicionarAoCarrinho(id);
+                });
+            });
+            document.querySelectorAll('.btn-qty-minus').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const id = parseInt(this.dataset.id);
+                    removerDoCarrinho(id);
                 });
             });
         }
@@ -1471,7 +1540,6 @@
         function adicionarAoCarrinho(id) {
             const produto = produtos.find(p => p.id === id);
             if (!produto) return;
-
             const existente = carrinho.find(item => item.id === id);
             if (existente) {
                 existente.quantidade += 1;
@@ -1479,13 +1547,6 @@
                 carrinho.push({ ...produto, quantidade: 1 });
             }
             atualizarCarrinho();
-            // Feedback visual
-            const btn = document.querySelector(`.btn-adicionar[data-id="${id}"]`);
-            if (btn) {
-                const originalText = btn.textContent;
-                btn.textContent = '✅ Adicionado!';
-                setTimeout(() => { btn.textContent = originalText; }, 1500);
-            }
         }
 
         function removerDoCarrinho(id) {
@@ -1509,12 +1570,18 @@
             return carrinho.reduce((acc, item) => acc + (item.preco * item.quantidade), 0);
         }
 
+        function atualizarQuantidadesExibidas() {
+            document.querySelectorAll('.qty-display').forEach(el => {
+                const id = parseInt(el.dataset.id);
+                const item = carrinho.find(p => p.id === id);
+                el.textContent = item ? item.quantidade : 0;
+            });
+        }
+
         function atualizarCarrinho() {
-            // Atualizar contador no header
             const totalItens = carrinho.reduce((acc, item) => acc + item.quantidade, 0);
             carrinhoCount.textContent = totalItens;
 
-            // Renderizar itens no sidebar
             if (carrinho.length === 0) {
                 carrinhoItems.innerHTML = '<li style="justify-content:center; color:#999; padding:30px 0;">Seu carrinho está vazio</li>';
             } else {
@@ -1529,11 +1596,12 @@
                         `).join('');
             }
 
-            // Atualizar total
             const total = calcularTotal();
             carrinhoTotal.textContent = `R$ ${total.toFixed(2)}`;
 
-            // Adicionar eventos de remover
+            // Atualiza os displays nos cards/lista
+            atualizarQuantidadesExibidas();
+
             document.querySelectorAll('.carrinho-items .btn-remover').forEach(btn => {
                 btn.addEventListener('click', function() {
                     const id = parseInt(this.dataset.id);
@@ -1562,32 +1630,35 @@
 
         limparCarrinhoBtn.addEventListener('click', limparCarrinho);
 
-        // ===== ENVIAR PEDIDO VIA WHATSAPP =====
+        // ===== ENVIAR PEDIDO VIA WHATSAPP COM ENDEREÇO =====
         enviarWhatsappBtn.addEventListener('click', function() {
             if (carrinho.length === 0) {
                 alert('Seu carrinho está vazio! Adicione alguns produtos antes de enviar o pedido.');
                 return;
             }
 
-            // Montar mensagem
+            const endereco = enderecoInput.value.trim();
+            if (!endereco) {
+                alert('📍 Por favor, informe o endereço de entrega para finalizar o pedido!');
+                enderecoInput.focus();
+                return;
+            }
+
             let mensagem = '🍦 *PEDIDO ESKIMÓ SORVETES* 🍦\n\n';
             carrinho.forEach(item => {
                 mensagem += `• ${item.icone} ${item.nome} - ${item.quantidade}x R$ ${item.preco.toFixed(2)} = R$ ${(item.preco * item.quantidade).toFixed(2)}\n`;
             });
             const total = calcularTotal();
-            mensagem += `\n*Total: R$ ${total.toFixed(2)}*\n\n`;
+            mensagem += `\n*Total: R$ ${total.toFixed(2)}*\n`;
+            mensagem += `⏱️ *Prazo de entrega: 40 minutos*\n`;
+            mensagem += `📍 *Endereço:* ${endereco}\n\n`;
             mensagem += 'Obrigado pela preferência! 🍨';
 
-            // Codificar para URL
             const msgEncoded = encodeURIComponent(mensagem);
             const numero = '554899100879';
             const url = `https://wa.me/${numero}?text=${msgEncoded}`;
 
-            // Abrir WhatsApp
             window.open(url, '_blank');
-
-            // Opcional: limpar carrinho após envio
-            // limparCarrinho();
         });
 
         // ===== CARROSSEL =====
