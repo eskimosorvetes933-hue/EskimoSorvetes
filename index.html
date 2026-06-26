@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
     <!-- FORÇA MODO CLARO -->
     <meta name="color-scheme" content="light" />
-    <title>Eskimó Sorvetes</title>
+    <title>Eskimó Sorvetes - Carrinho</title>
 
     <!-- Fontes e ícones -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -15,23 +15,19 @@
 
     <style>
         /* ============================================================
-               FORÇA MODO CLARO EM TODOS OS ELEMENTOS E NAVEGADORES
+               FORÇA MODO CLARO
                ============================================================ */
         * {
             color-scheme: light !important;
         }
-
         :root {
             color-scheme: light !important;
         }
-
         html,
         body {
             background: #f8f8f8 !important;
             color: #1f1f1f !important;
         }
-
-        /* Sobrescreve qualquer tema escuro do sistema */
         @media (prefers-color-scheme: dark) {
             html,
             body {
@@ -43,7 +39,6 @@
             }
         }
 
-        /* ===== VARIÁVEIS (CORES CLARAS) ===== */
         :root {
             --vermelho-principal: #D71920;
             --vermelho-escuro: #B51218;
@@ -79,7 +74,6 @@
             text-decoration: none;
             color: inherit;
         }
-
         ul {
             list-style: none;
         }
@@ -106,30 +100,44 @@
             letter-spacing: 0.5px;
             text-align: center;
         }
-
         .btn:hover {
             background: var(--vermelho-escuro);
             transform: translateY(-3px);
         }
-
         .btn-whatsapp {
             background: #25D366;
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
         }
-
         .btn-whatsapp:hover {
             background: #128C7E;
         }
-
         .btn-outline {
             background: transparent;
             border: 2px solid #fff;
             box-shadow: none;
         }
-
         .btn-outline:hover {
             background: #fff;
             color: var(--vermelho-principal);
+        }
+        .btn-carrinho {
+            background: var(--laranja);
+            box-shadow: 0 4px 15px rgba(245, 158, 27, 0.4);
+        }
+        .btn-carrinho:hover {
+            background: #e08e0b;
+        }
+        .btn-remover {
+            background: #ccc;
+            color: #333;
+            padding: 4px 12px;
+            font-size: 0.8rem;
+            border-radius: 30px;
+            box-shadow: none;
+        }
+        .btn-remover:hover {
+            background: #b0b0b0;
+            transform: none;
         }
 
         /* ===== BOTÃO FLUTUANTE WHATSAPP ===== */
@@ -153,7 +161,6 @@
             cursor: pointer;
             text-decoration: none;
         }
-
         .whatsapp-float:hover {
             transform: scale(1.1);
             background: #128C7E;
@@ -169,13 +176,11 @@
             z-index: 1000;
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
         }
-
         .header .container {
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
-
         .logo {
             display: flex;
             align-items: center;
@@ -184,7 +189,6 @@
             font-family: 'Fredoka One', cursive;
             font-size: 1.6rem;
         }
-
         .logo i {
             font-size: 2rem;
             color: var(--amarelo-destaque);
@@ -198,7 +202,6 @@
             gap: 28px;
             align-items: center;
         }
-
         .nav-list a {
             color: rgba(255, 255, 255, 0.9);
             font-weight: 600;
@@ -207,7 +210,6 @@
             position: relative;
             white-space: nowrap;
         }
-
         .nav-list a::after {
             content: '';
             position: absolute;
@@ -219,16 +221,13 @@
             transition: var(--transition);
             border-radius: 10px;
         }
-
         .nav-list a:hover::after {
             width: 100%;
         }
-
         .nav-list .btn-whatsapp {
             padding: 8px 20px;
             font-size: 0.85rem;
         }
-
         .menu-toggle {
             display: none;
             background: none;
@@ -247,7 +246,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .hero::before {
             content: '';
             position: absolute;
@@ -258,7 +256,6 @@
             background: radial-gradient(circle, rgba(255, 210, 0, 0.15) 0%, transparent 70%);
             border-radius: 50%;
         }
-
         .hero .container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -267,44 +264,37 @@
             position: relative;
             z-index: 2;
         }
-
         .hero-content h1 {
             font-family: 'Fredoka One', cursive;
             font-size: 3.2rem;
             line-height: 1.2;
             margin-bottom: 14px;
         }
-
         .hero-content h1 span {
             color: var(--amarelo-destaque);
         }
-
         .hero-content p {
             font-size: 1.15rem;
             opacity: 0.9;
             max-width: 500px;
             margin-bottom: 28px;
         }
-
         .hero-buttons {
             display: flex;
             gap: 14px;
             flex-wrap: wrap;
         }
-
         .hero-image {
             display: flex;
             justify-content: center;
             align-items: center;
         }
-
         .hero-image .sorvete-ilustra {
             font-size: 13rem;
             color: var(--amarelo-destaque);
             text-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             animation: flutuar 4s ease-in-out infinite;
         }
-
         @keyframes flutuar {
             0%,
             100% {
@@ -319,7 +309,6 @@
         .section {
             padding: 70px 0;
         }
-
         .section-title {
             font-family: 'Fredoka One', cursive;
             font-size: 2.6rem;
@@ -327,11 +316,9 @@
             color: var(--vermelho-principal);
             margin-bottom: 8px;
         }
-
         .section-title span {
             color: var(--amarelo-destaque);
         }
-
         .section-subtitle {
             text-align: center;
             font-size: 1.05rem;
@@ -357,29 +344,24 @@
             border-bottom: 6px solid var(--amarelo-destaque);
             position: relative;
         }
-
         .card-produto:hover {
             transform: translateY(-8px);
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
         }
-
         .card-produto .icone {
             font-size: 3.5rem;
             margin-bottom: 8px;
             display: block;
         }
-
         .card-produto h3 {
             font-size: 1.15rem;
             color: var(--preto);
             margin-bottom: 4px;
         }
-
         .card-produto p {
             color: #777;
             font-size: 0.9rem;
         }
-
         .card-produto .preco {
             display: inline-block;
             margin-top: 10px;
@@ -390,6 +372,22 @@
             border-radius: 50px;
             font-size: 1rem;
         }
+        .card-produto .btn-adicionar {
+            margin-top: 14px;
+            padding: 8px 18px;
+            font-size: 0.85rem;
+            background: var(--azul-claro);
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 700;
+        }
+        .card-produto .btn-adicionar:hover {
+            background: #2a8ab5;
+            transform: scale(1.05);
+        }
 
         .card-produto.acai {
             border-bottom-color: var(--roxo);
@@ -398,7 +396,6 @@
             background: var(--roxo);
             color: #fff;
         }
-
         .card-produto.gelado {
             border-bottom-color: var(--azul-claro);
         }
@@ -406,7 +403,6 @@
             background: var(--azul-claro);
             color: #fff;
         }
-
         .card-produto.chocolate {
             border-bottom-color: var(--marrom);
         }
@@ -414,7 +410,6 @@
             background: var(--marrom);
             color: #fff;
         }
-
         .card-produto.promocao {
             border-bottom-color: var(--laranja);
         }
@@ -422,7 +417,6 @@
             background: var(--laranja);
             color: #fff;
         }
-
         .card-produto .etiqueta {
             position: absolute;
             top: -8px;
@@ -436,6 +430,116 @@
             text-transform: uppercase;
         }
 
+        /* ===== CARRINHO (barra lateral) ===== */
+        .carrinho-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 9998;
+            display: none;
+            justify-content: flex-end;
+        }
+        .carrinho-overlay.open {
+            display: flex;
+        }
+
+        .carrinho-sidebar {
+            background: #fff;
+            width: 380px;
+            max-width: 90%;
+            height: 100%;
+            padding: 30px 20px;
+            overflow-y: auto;
+            box-shadow: -4px 0 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+        }
+        .carrinho-sidebar h2 {
+            font-family: 'Fredoka One', cursive;
+            color: var(--vermelho-principal);
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .carrinho-sidebar h2 button {
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #999;
+            transition: var(--transition);
+        }
+        .carrinho-sidebar h2 button:hover {
+            color: var(--vermelho-principal);
+        }
+
+        .carrinho-items {
+            flex: 1;
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+        .carrinho-items li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .carrinho-items li .item-info {
+            display: flex;
+            flex-direction: column;
+        }
+        .carrinho-items li .item-info .nome {
+            font-weight: 700;
+            color: var(--preto);
+        }
+        .carrinho-items li .item-info .preco-item {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        .carrinho-items li .btn-remover {
+            background: #e74c3c;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            padding: 4px 12px;
+            cursor: pointer;
+            font-size: 0.75rem;
+            transition: var(--transition);
+        }
+        .carrinho-items li .btn-remover:hover {
+            background: #c0392b;
+        }
+
+        .carrinho-total {
+            font-size: 1.4rem;
+            font-weight: 800;
+            text-align: right;
+            border-top: 2px solid #eee;
+            padding-top: 16px;
+            margin-top: 10px;
+            color: var(--preto);
+        }
+        .carrinho-total span {
+            color: var(--vermelho-principal);
+        }
+
+        .carrinho-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+        .carrinho-actions .btn {
+            flex: 1;
+            min-width: 120px;
+        }
+
         /* ===== CARROSSEL ===== */
         .carrossel-wrapper {
             position: relative;
@@ -444,12 +548,10 @@
             box-shadow: var(--sombra);
             margin-top: 20px;
         }
-
         .carrossel-track {
             display: flex;
             transition: transform 0.5s ease;
         }
-
         .carrossel-slide {
             min-width: 100%;
             display: flex;
@@ -460,24 +562,20 @@
             gap: 30px;
             flex-wrap: wrap;
         }
-
         .carrossel-slide .info {
             max-width: 400px;
             text-align: center;
         }
-
         .carrossel-slide .info h3 {
             font-family: 'Fredoka One', cursive;
             font-size: 1.8rem;
             color: var(--vermelho-principal);
         }
-
         .carrossel-slide .info p {
             color: #555;
             margin: 8px 0 14px;
             font-size: 1rem;
         }
-
         .carrossel-slide .info .preco-destaque {
             font-size: 2rem;
             font-weight: 800;
@@ -487,7 +585,6 @@
             border-radius: 30px;
             display: inline-block;
         }
-
         .carrossel-slide .emogi {
             font-size: 5rem;
         }
@@ -507,11 +604,9 @@
             transition: var(--transition);
             z-index: 5;
         }
-
         .carrossel-btn:hover {
             background: var(--vermelho-escuro);
         }
-
         .carrossel-btn.prev {
             left: 14px;
         }
@@ -525,7 +620,6 @@
             gap: 12px;
             margin-top: 18px;
         }
-
         .carrossel-indicators button {
             width: 14px;
             height: 14px;
@@ -535,7 +629,6 @@
             cursor: pointer;
             transition: var(--transition);
         }
-
         .carrossel-indicators button.active {
             background: var(--vermelho-principal);
             transform: scale(1.2);
@@ -545,31 +638,26 @@
         .sobre {
             background: #fff;
         }
-
         .sobre-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 50px;
             align-items: center;
         }
-
         .sobre-texto h2 {
             font-family: 'Fredoka One', cursive;
             font-size: 2.2rem;
             color: var(--vermelho-principal);
             margin-bottom: 14px;
         }
-
         .sobre-texto h2 span {
             color: var(--amarelo-destaque);
         }
-
         .sobre-texto p {
             color: #555;
             margin-bottom: 16px;
             font-size: 1.05rem;
         }
-
         .sobre-imagem {
             display: flex;
             justify-content: center;
@@ -587,7 +675,6 @@
             grid-template-columns: repeat(2, 1fr);
             gap: 18px;
         }
-
         .item-produto {
             background: #fff;
             border-radius: var(--radius);
@@ -599,24 +686,19 @@
             transition: var(--transition);
             border-left: 6px solid var(--amarelo-destaque);
         }
-
         .item-produto:hover {
             transform: scale(1.02);
         }
-
         .item-produto .emoji {
             font-size: 2.6rem;
         }
-
         .item-produto .detalhes {
             flex: 1;
         }
-
         .item-produto .detalhes h4 {
             font-size: 1.1rem;
             color: var(--preto);
         }
-
         .item-produto .detalhes .valor {
             font-weight: 800;
             color: var(--vermelho-principal);
@@ -629,33 +711,28 @@
             background: var(--vermelho-principal);
             color: #fff;
         }
-
         .contato .section-title {
             color: #fff;
         }
         .contato .section-title span {
             color: var(--amarelo-destaque);
         }
-
         .contato-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 50px;
             margin-top: 20px;
         }
-
         .contato-info h3 {
             font-size: 1.8rem;
             margin-bottom: 12px;
             font-family: 'Fredoka One', cursive;
         }
-
         .contato-info p {
             opacity: 0.85;
             margin-bottom: 24px;
             font-size: 1rem;
         }
-
         .contato-info .item {
             display: flex;
             align-items: center;
@@ -663,7 +740,6 @@
             margin-bottom: 16px;
             font-size: 1rem;
         }
-
         .contato-info .item i {
             width: 38px;
             height: 38px;
@@ -676,13 +752,11 @@
             font-size: 1.1rem;
             flex-shrink: 0;
         }
-
         .contato-info .btn-whatsapp {
             margin-top: 12px;
             padding: 14px 32px;
             font-size: 1.1rem;
         }
-
         .contato-form input,
         .contato-form textarea {
             width: 100%;
@@ -697,24 +771,20 @@
             transition: var(--transition);
             border: 1px solid transparent;
         }
-
         .contato-form input::placeholder,
         .contato-form textarea::placeholder {
             color: rgba(255, 255, 255, 0.6);
         }
-
         .contato-form input:focus,
         .contato-form textarea:focus {
             outline: none;
             background: rgba(255, 255, 255, 0.18);
             border-color: var(--amarelo-destaque);
         }
-
         .contato-form textarea {
             min-height: 120px;
             resize: vertical;
         }
-
         .contato-form .btn {
             width: 100%;
             padding: 16px;
@@ -728,24 +798,20 @@
             padding: 40px 0 20px;
             text-align: center;
         }
-
         .footer .logo {
             justify-content: center;
             margin-bottom: 12px;
             font-size: 1.5rem;
         }
-
         .footer p {
             font-size: 0.95rem;
         }
-
         .footer .social {
             display: flex;
             justify-content: center;
             gap: 18px;
             margin: 18px 0 14px;
         }
-
         .footer .social a {
             display: inline-flex;
             width: 44px;
@@ -758,7 +824,6 @@
             transition: var(--transition);
             color: #fff;
         }
-
         .footer .social a:hover {
             background: var(--amarelo-destaque);
             color: var(--preto);
@@ -766,10 +831,9 @@
         }
 
         /* ============================================================= */
-        /* ===== RESPONSIVIDADE – PRIORIDADE PARA CELULAR ===== */
+        /* ===== RESPONSIVIDADE ===== */
         /* ============================================================= */
 
-        /* Tablets e telas médias */
         @media (max-width: 992px) {
             .hero .container {
                 grid-template-columns: 1fr;
@@ -806,9 +870,7 @@
             }
         }
 
-        /* Celular (até 768px) */
         @media (max-width: 768px) {
-            /* Menu hambúrguer */
             .nav-list {
                 position: fixed;
                 top: 70px;
@@ -859,7 +921,6 @@
                 font-size: 2.2rem;
             }
 
-            /* Produtos em 2 colunas */
             .grid-produtos {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 16px;
@@ -933,9 +994,14 @@
             .footer .logo {
                 font-size: 1.3rem;
             }
+
+            .carrinho-sidebar {
+                width: 100%;
+                max-width: 100%;
+                border-radius: 0;
+            }
         }
 
-        /* Celular pequeno (até 480px) – UMA COLUNA EM TUDO */
         @media (max-width: 480px) {
             .container {
                 padding: 0 14px;
@@ -963,7 +1029,6 @@
                 margin-bottom: 30px;
             }
 
-            /* PRODUTOS EM 1 COLUNA */
             .grid-produtos {
                 grid-template-columns: 1fr;
                 gap: 14px;
@@ -1029,13 +1094,20 @@
                 font-size: 1rem;
             }
 
-            /* Botão flutuante menor */
             .whatsapp-float {
                 width: 50px;
                 height: 50px;
                 font-size: 2rem;
                 bottom: 16px;
                 right: 16px;
+            }
+
+            .carrinho-sidebar {
+                padding: 20px 16px;
+            }
+            .carrinho-actions .btn {
+                font-size: 0.85rem;
+                padding: 10px 16px;
             }
         }
 
@@ -1061,7 +1133,7 @@
 </head>
 <body>
 
-    <!-- ===== BOTÃO FLUTUANTE WHATSAPP (NOVO NÚMERO) ===== -->
+    <!-- ===== BOTÃO FLUTUANTE WHATSAPP ===== -->
     <a href="https://wa.me/554899100879" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
@@ -1082,10 +1154,14 @@
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#lista">Cardápio</a></li>
                 <li>
-                    <!-- NOVO NÚMERO -->
                     <a href="https://wa.me/554899100879" target="_blank" class="btn btn-whatsapp">
                         <i class="fab fa-whatsapp"></i> Peça já
                     </a>
+                </li>
+                <li>
+                    <button class="btn btn-carrinho" id="abrirCarrinho" style="padding: 8px 20px; font-size: 0.85rem;">
+                        <i class="fas fa-shopping-cart"></i> Carrinho (<span id="carrinhoCount">0</span>)
+                    </button>
                 </li>
             </ul>
         </div>
@@ -1096,13 +1172,12 @@
         <div class="container">
             <div class="hero-content">
                 <h1>O sabor que <span>derrete</span> o coração</h1>
-                <p>Há mais de 30 anos criando os sorvetes mais cremosos e deliciosos. Peça pelo WhatsApp e receba em casa!</p>
+                <p>Há mais de 30 anos criando os sorvetes mais cremosos e deliciosos. Adicione ao carrinho e peça pelo WhatsApp!</p>
                 <div class="hero-buttons">
                     <a href="#produtos" class="btn">Ver Produtos</a>
-                    <!-- NOVO NÚMERO -->
-                    <a href="https://wa.me/554899100879" target="_blank" class="btn btn-whatsapp">
-                        <i class="fab fa-whatsapp"></i> Peça agora
-                    </a>
+                    <button class="btn btn-carrinho" id="abrirCarrinhoHero">
+                        <i class="fas fa-shopping-cart"></i> Ver Carrinho
+                    </button>
                 </div>
             </div>
             <div class="hero-image">
@@ -1115,57 +1190,9 @@
     <section class="section" id="produtos">
         <div class="container">
             <h2 class="section-title">Nossos <span>Produtos</span></h2>
-            <p class="section-subtitle">Qualidade e sabor em cada opção. Escolha o seu favorito!</p>
-            <div class="grid-produtos">
-                <div class="card-produto acai">
-                    <span class="icone">🍇</span>
-                    <h3>Açaí 180 g</h3>
-                    <p>Puro e energético</p>
-                    <span class="preco">R$ 13,00</span>
-                </div>
-                <div class="card-produto acai">
-                    <span class="icone">🥛</span>
-                    <h3>Açaí com leite em pó</h3>
-                    <p>Cremoso e saboroso</p>
-                    <span class="preco">R$ 14,00</span>
-                </div>
-                <div class="card-produto acai">
-                    <span class="icone">🍇</span>
-                    <h3>Açaí 900 g</h3>
-                    <p>Família ou para compartilhar</p>
-                    <span class="preco">R$ 29,00</span>
-                </div>
-                <div class="card-produto gelado">
-                    <span class="icone">🥤</span>
-                    <h3>Best Cup</h3>
-                    <p>Delícia em copo</p>
-                    <span class="preco">R$ 19,50</span>
-                </div>
-                <div class="card-produto gelado">
-                    <span class="icone">🍦</span>
-                    <h3>Zero açúcar 1L</h3>
-                    <p>Saúde e sabor</p>
-                    <span class="preco">R$ 22,50</span>
-                </div>
-                <div class="card-produto gelado">
-                    <span class="icone">❄️</span>
-                    <h3>Grand Nevado</h3>
-                    <p>Extra cremoso</p>
-                    <span class="preco">R$ 23,50</span>
-                </div>
-                <div class="card-produto chocolate">
-                    <span class="icone">🍫</span>
-                    <h3>Pote 2L - vários sabores</h3>
-                    <p>Escolha o seu</p>
-                    <span class="preco">R$ 28,00</span>
-                </div>
-                <div class="card-produto promocao">
-                    <span class="icone">🔥</span>
-                    <h3>Pote 2L - Super Promoção</h3>
-                    <p>Ofertão imperdível!</p>
-                    <span class="preco">R$ 10,00</span>
-                    <span class="etiqueta">Promoção</span>
-                </div>
+            <p class="section-subtitle">Clique em "Adicionar" para montar seu pedido.</p>
+            <div class="grid-produtos" id="produtosGrid">
+                <!-- Os produtos serão injetados via JS -->
             </div>
         </div>
     </section>
@@ -1225,7 +1252,6 @@
                         Cada produto é preparado com todo cuidado, respeitando a tradição e inovando com novos sabores
                         que surpreendem. Nossa missão é proporcionar momentos doces e inesquecíveis para toda a família.
                     </p>
-                    <!-- NOVO NÚMERO -->
                     <a href="https://wa.me/554899100879" target="_blank" class="btn btn-whatsapp">
                         <i class="fab fa-whatsapp"></i> Fale conosco
                     </a>
@@ -1242,69 +1268,13 @@
         <div class="container">
             <h2 class="section-title">Nosso <span>Cardápio</span></h2>
             <p class="section-subtitle">Veja todos os produtos com preços e peça pelo WhatsApp.</p>
-            <div class="lista-produtos">
-                <div class="item-produto">
-                    <span class="emoji">🍇</span>
-                    <div class="detalhes">
-                        <h4>Açaí 180 g</h4>
-                        <span class="valor">R$ 13,00</span>
-                    </div>
-                </div>
-                <div class="item-produto">
-                    <span class="emoji">🥛</span>
-                    <div class="detalhes">
-                        <h4>Açaí com leite em pó</h4>
-                        <span class="valor">R$ 14,00</span>
-                    </div>
-                </div>
-                <div class="item-produto">
-                    <span class="emoji">🍇</span>
-                    <div class="detalhes">
-                        <h4>Açaí 900 g</h4>
-                        <span class="valor">R$ 29,00</span>
-                    </div>
-                </div>
-                <div class="item-produto">
-                    <span class="emoji">🥤</span>
-                    <div class="detalhes">
-                        <h4>Best Cup</h4>
-                        <span class="valor">R$ 19,50</span>
-                    </div>
-                </div>
-                <div class="item-produto">
-                    <span class="emoji">🍦</span>
-                    <div class="detalhes">
-                        <h4>Zero açúcar 1L</h4>
-                        <span class="valor">R$ 22,50</span>
-                    </div>
-                </div>
-                <div class="item-produto">
-                    <span class="emoji">❄️</span>
-                    <div class="detalhes">
-                        <h4>Grand Nevado</h4>
-                        <span class="valor">R$ 23,50</span>
-                    </div>
-                </div>
-                <div class="item-produto">
-                    <span class="emoji">🍫</span>
-                    <div class="detalhes">
-                        <h4>Pote 2L (vários sabores)</h4>
-                        <span class="valor">R$ 28,00</span>
-                    </div>
-                </div>
-                <div class="item-produto" style="border-left-color: var(--laranja);">
-                    <span class="emoji">🔥</span>
-                    <div class="detalhes">
-                        <h4>Pote 2L - Super Promoção</h4>
-                        <span class="valor" style="color: var(--laranja);">R$ 10,00</span>
-                    </div>
-                </div>
+            <div class="lista-produtos" id="listaProdutos">
+                <!-- Injetado via JS -->
             </div>
             <div style="text-align: center; margin-top: 35px;">
-                <!-- NOVO NÚMERO -->
-                <a href="https://wa.me/554899100879" target="_blank" class="btn btn-whatsapp" style="font-size: 1.2rem; padding: 14px 44px;">
-                    <i class="fab fa-whatsapp"></i> Faça seu pedido agora
-                </a>
+                <button class="btn btn-carrinho" id="abrirCarrinhoLista" style="font-size: 1.2rem; padding: 14px 44px;">
+                    <i class="fas fa-shopping-cart"></i> Ver Carrinho
+                </button>
             </div>
         </div>
     </section>
@@ -1320,7 +1290,6 @@
                 <div class="contato-info">
                     <h3>📞 Entre em contato</h3>
                     <p>Clique no botão abaixo e fale diretamente com a gente pelo WhatsApp.</p>
-                    <!-- TELEFONES ATUALIZADOS -->
                     <div class="item"><i class="fas fa-phone-alt"></i> (48) 9910-0879</div>
                     <div class="item"><i class="fab fa-whatsapp"></i> (48) 9910-0879</div>
                     <div class="item"><i class="fas fa-envelope"></i> contato@eskimosorvetes.com.br</div>
@@ -1329,7 +1298,6 @@
                         <span style="background: rgba(255,255,255,0.1); padding: 6px 16px; border-radius: 30px; font-size: 0.9rem;">🍨 Aberto todos os dias</span>
                         <span style="background: rgba(255,255,255,0.1); padding: 6px 16px; border-radius: 30px; font-size: 0.9rem;">⏰ 10h às 22h</span>
                     </div>
-                    <!-- NOVO NÚMERO -->
                     <a href="https://wa.me/554899100879" target="_blank" class="btn btn-whatsapp" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 24px;">
                         <i class="fab fa-whatsapp"></i> WhatsApp (48) 9910-0879
                     </a>
@@ -1363,26 +1331,263 @@
         </div>
     </footer>
 
+    <!-- ===== OVERLAY DO CARRINHO ===== -->
+    <div class="carrinho-overlay" id="carrinhoOverlay">
+        <div class="carrinho-sidebar">
+            <h2>
+                <span><i class="fas fa-shopping-cart"></i> Carrinho</span>
+                <button id="fecharCarrinho">&times;</button>
+            </h2>
+            <ul class="carrinho-items" id="carrinhoItems">
+                <!-- Itens dinâmicos -->
+            </ul>
+            <div class="carrinho-total">
+                Total: <span id="carrinhoTotal">R$ 0,00</span>
+            </div>
+            <div class="carrinho-actions">
+                <button class="btn btn-whatsapp" id="enviarWhatsapp">
+                    <i class="fab fa-whatsapp"></i> Enviar Pedido
+                </button>
+                <button class="btn btn-remover" id="limparCarrinho" style="background:#e74c3c; color:#fff; padding:12px 20px;">
+                    Limpar
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- ===== JAVASCRIPT ===== -->
     <script>
-        // ===== MENU MOBILE =====
-        const menuToggle = document.getElementById('menuToggle');
-        const navList = document.getElementById('navList');
+        // ===== DADOS DOS PRODUTOS =====
+        const produtos = [{
+            id: 1,
+            nome: 'Açaí 180 g',
+            preco: 13.00,
+            icone: '🍇',
+            categoria: 'acai',
+            descricao: 'Puro e energético'
+        }, {
+            id: 2,
+            nome: 'Açaí com leite em pó',
+            preco: 14.00,
+            icone: '🥛',
+            categoria: 'acai',
+            descricao: 'Cremoso e saboroso'
+        }, {
+            id: 3,
+            nome: 'Açaí 900 g',
+            preco: 29.00,
+            icone: '🍇',
+            categoria: 'acai',
+            descricao: 'Família ou para compartilhar'
+        }, {
+            id: 4,
+            nome: 'Best Cup',
+            preco: 19.50,
+            icone: '🥤',
+            categoria: 'gelado',
+            descricao: 'Delícia em copo'
+        }, {
+            id: 5,
+            nome: 'Zero açúcar 1L',
+            preco: 22.50,
+            icone: '🍦',
+            categoria: 'gelado',
+            descricao: 'Saúde e sabor'
+        }, {
+            id: 6,
+            nome: 'Grand Nevado',
+            preco: 23.50,
+            icone: '❄️',
+            categoria: 'gelado',
+            descricao: 'Extra cremoso'
+        }, {
+            id: 7,
+            nome: 'Pote 2L - vários sabores',
+            preco: 28.00,
+            icone: '🍫',
+            categoria: 'chocolate',
+            descricao: 'Escolha o seu'
+        }, {
+            id: 8,
+            nome: 'Pote 2L - Super Promoção',
+            preco: 10.00,
+            icone: '🔥',
+            categoria: 'promocao',
+            descricao: 'Ofertão imperdível!',
+            etiqueta: 'Promoção'
+        }];
 
-        menuToggle.addEventListener('click', () => {
-            navList.classList.toggle('open');
-            const icon = menuToggle.querySelector('i');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-times');
+        // ===== CARRINHO =====
+        let carrinho = [];
+
+        // ===== REFERÊNCIAS DOM =====
+        const produtosGrid = document.getElementById('produtosGrid');
+        const listaProdutos = document.getElementById('listaProdutos');
+        const carrinhoItems = document.getElementById('carrinhoItems');
+        const carrinhoTotal = document.getElementById('carrinhoTotal');
+        const carrinhoCount = document.getElementById('carrinhoCount');
+        const carrinhoOverlay = document.getElementById('carrinhoOverlay');
+        const abrirCarrinhoBtns = document.querySelectorAll('#abrirCarrinho, #abrirCarrinhoHero, #abrirCarrinhoLista');
+        const fecharCarrinhoBtn = document.getElementById('fecharCarrinho');
+        const limparCarrinhoBtn = document.getElementById('limparCarrinho');
+        const enviarWhatsappBtn = document.getElementById('enviarWhatsapp');
+
+        // ===== RENDERIZAR PRODUTOS =====
+        function renderizarProdutos() {
+            // Grid de produtos
+            produtosGrid.innerHTML = produtos.map(p => `
+                        <div class="card-produto ${p.categoria}">
+                            ${p.etiqueta ? `<span class="etiqueta">${p.etiqueta}</span>` : ''}
+                            <span class="icone">${p.icone}</span>
+                            <h3>${p.nome}</h3>
+                            <p>${p.descricao}</p>
+                            <span class="preco">R$ ${p.preco.toFixed(2)}</span>
+                            <button class="btn-adicionar" data-id="${p.id}">Adicionar</button>
+                        </div>
+                    `).join('');
+
+            // Lista de produtos (cardápio)
+            listaProdutos.innerHTML = produtos.map(p => `
+                        <div class="item-produto" style="${p.categoria === 'promocao' ? 'border-left-color: var(--laranja);' : ''}">
+                            <span class="emoji">${p.icone}</span>
+                            <div class="detalhes">
+                                <h4>${p.nome}</h4>
+                                <span class="valor">R$ ${p.preco.toFixed(2)}</span>
+                            </div>
+                            <button class="btn-adicionar" data-id="${p.id}" style="background: var(--azul-claro); color: #fff; border: none; border-radius: 30px; padding: 6px 16px; cursor: pointer; font-weight: 700;">+</button>
+                        </div>
+                    `).join('');
+
+            // Adicionar eventos de "Adicionar" em ambos os lugares
+            document.querySelectorAll('.btn-adicionar').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    const id = parseInt(this.dataset.id);
+                    adicionarAoCarrinho(id);
+                });
+            });
+        }
+
+        // ===== FUNÇÕES DO CARRINHO =====
+        function adicionarAoCarrinho(id) {
+            const produto = produtos.find(p => p.id === id);
+            if (!produto) return;
+
+            const existente = carrinho.find(item => item.id === id);
+            if (existente) {
+                existente.quantidade += 1;
+            } else {
+                carrinho.push({ ...produto, quantidade: 1 });
+            }
+            atualizarCarrinho();
+            // Feedback visual
+            const btn = document.querySelector(`.btn-adicionar[data-id="${id}"]`);
+            if (btn) {
+                const originalText = btn.textContent;
+                btn.textContent = '✅ Adicionado!';
+                setTimeout(() => { btn.textContent = originalText; }, 1500);
+            }
+        }
+
+        function removerDoCarrinho(id) {
+            const index = carrinho.findIndex(item => item.id === id);
+            if (index !== -1) {
+                if (carrinho[index].quantidade > 1) {
+                    carrinho[index].quantidade -= 1;
+                } else {
+                    carrinho.splice(index, 1);
+                }
+                atualizarCarrinho();
+            }
+        }
+
+        function limparCarrinho() {
+            carrinho = [];
+            atualizarCarrinho();
+        }
+
+        function calcularTotal() {
+            return carrinho.reduce((acc, item) => acc + (item.preco * item.quantidade), 0);
+        }
+
+        function atualizarCarrinho() {
+            // Atualizar contador no header
+            const totalItens = carrinho.reduce((acc, item) => acc + item.quantidade, 0);
+            carrinhoCount.textContent = totalItens;
+
+            // Renderizar itens no sidebar
+            if (carrinho.length === 0) {
+                carrinhoItems.innerHTML = '<li style="justify-content:center; color:#999; padding:30px 0;">Seu carrinho está vazio</li>';
+            } else {
+                carrinhoItems.innerHTML = carrinho.map(item => `
+                            <li>
+                                <div class="item-info">
+                                    <span class="nome">${item.icone} ${item.nome}</span>
+                                    <span class="preco-item">${item.quantidade}x R$ ${item.preco.toFixed(2)} = R$ ${(item.preco * item.quantidade).toFixed(2)}</span>
+                                </div>
+                                <button class="btn-remover" data-id="${item.id}">Remover</button>
+                            </li>
+                        `).join('');
+            }
+
+            // Atualizar total
+            const total = calcularTotal();
+            carrinhoTotal.textContent = `R$ ${total.toFixed(2)}`;
+
+            // Adicionar eventos de remover
+            document.querySelectorAll('.carrinho-items .btn-remover').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const id = parseInt(this.dataset.id);
+                    removerDoCarrinho(id);
+                });
+            });
+        }
+
+        // ===== ABRIR/FECHAR CARRINHO =====
+        function abrirCarrinho() {
+            carrinhoOverlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            atualizarCarrinho();
+        }
+
+        function fecharCarrinho() {
+            carrinhoOverlay.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+
+        abrirCarrinhoBtns.forEach(btn => btn.addEventListener('click', abrirCarrinho));
+        fecharCarrinhoBtn.addEventListener('click', fecharCarrinho);
+        carrinhoOverlay.addEventListener('click', function(e) {
+            if (e.target === this) fecharCarrinho();
         });
 
-        document.querySelectorAll('.nav-list a').forEach(link => {
-            link.addEventListener('click', () => {
-                navList.classList.remove('open');
-                const icon = menuToggle.querySelector('i');
-                icon.classList.add('fa-bars');
-                icon.classList.remove('fa-times');
+        limparCarrinhoBtn.addEventListener('click', limparCarrinho);
+
+        // ===== ENVIAR PEDIDO VIA WHATSAPP =====
+        enviarWhatsappBtn.addEventListener('click', function() {
+            if (carrinho.length === 0) {
+                alert('Seu carrinho está vazio! Adicione alguns produtos antes de enviar o pedido.');
+                return;
+            }
+
+            // Montar mensagem
+            let mensagem = '🍦 *PEDIDO ESKIMÓ SORVETES* 🍦\n\n';
+            carrinho.forEach(item => {
+                mensagem += `• ${item.icone} ${item.nome} - ${item.quantidade}x R$ ${item.preco.toFixed(2)} = R$ ${(item.preco * item.quantidade).toFixed(2)}\n`;
             });
+            const total = calcularTotal();
+            mensagem += `\n*Total: R$ ${total.toFixed(2)}*\n\n`;
+            mensagem += 'Obrigado pela preferência! 🍨';
+
+            // Codificar para URL
+            const msgEncoded = encodeURIComponent(mensagem);
+            const numero = '554899100879';
+            const url = `https://wa.me/${numero}?text=${msgEncoded}`;
+
+            // Abrir WhatsApp
+            window.open(url, '_blank');
+
+            // Opcional: limpar carrinho após envio
+            // limparCarrinho();
         });
 
         // ===== CARROSSEL =====
@@ -1402,7 +1607,6 @@
             dot.addEventListener('click', () => goToSlide(i));
             indicatorsContainer.appendChild(dot);
         }
-
         const dots = indicatorsContainer.querySelectorAll('button');
 
         function goToSlide(index) {
@@ -1433,6 +1637,26 @@
             this.reset();
         });
 
+        // ===== MENU MOBILE =====
+        const menuToggle = document.getElementById('menuToggle');
+        const navList = document.getElementById('navList');
+
+        menuToggle.addEventListener('click', () => {
+            navList.classList.toggle('open');
+            const icon = menuToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        document.querySelectorAll('.nav-list a').forEach(link => {
+            link.addEventListener('click', () => {
+                navList.classList.remove('open');
+                const icon = menuToggle.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+
         // ===== SCROLL SUAVE =====
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -1459,6 +1683,10 @@
                 '0 4px 30px rgba(0,0,0,0.3)' :
                 '0 2px 20px rgba(0,0,0,0.2)';
         });
+
+        // ===== INICIALIZAR =====
+        renderizarProdutos();
+        atualizarCarrinho();
     </script>
 
 </body>
